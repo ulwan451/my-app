@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Star Wars Application
 
-First, run the development server:
+This application is an example of a web app that uses Next.js, TypeScript, and React to display data from the Star Wars API (`swapi.dev`). The application has three main pages: **Login**, **Home**, and **Wishlist**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Key Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-   **Login Page**: A page for login with dummy authentication.
+-   **Home Page**: Displays data from the Star Wars API using reusable components.
+-   **Wishlist Page**: Stores and displays wishlist items using the Context API.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+-   [Next.js](https://nextjs.org/) - React framework for web application development.
+-   [TypeScript](https://www.typescriptlang.org/) - A JavaScript superset that adds static types.
+-   [ESLint](https://eslint.org/) - A linting tool to ensure code quality.
+-   [CSS Modules](https://github.com/css-modules/css-modules) - Scoped styling technique for components.
+-   [Context API](https://reactjs.org/docs/context.html) - For global state management.
 
-## Learn More
+## Installation Instructions
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the Repository**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone <URL_REPOSITORI>
+   cd <NAME_PROJECT>
+2. **Install Dependencies**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```bash
+	npm install
+3. **Run the Application**
 
-## Deploy on Vercel
+   ```bash
+	npm run dev
+## Dummy Data
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+For dummy login, use the following information:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-   **Username**: `admin`
+-   **Password**: `123`
+
+## Implemented Features
+
+1.  **Fetch Data from External API**
+    
+    -   Using `swapi.dev` to fetch Star Wars data.
+    -   Implementation in `lib/api.ts`.
+2.  **Conditional Rendering**
+    
+    -   Displays loading or error components if data fetching encounters issues.
+3.  **Reusable Component**
+    
+    -   The `CharacterCard.tsx` component is used to display Star Wars character information consistently across pages.
+4.  **Reactivity with State, Props, and Context**
+    
+    -   State: Managed using React hooks within components.
+    -   Props: For passing data to child components.
+    -   Context: `WishlistContext.tsx` is used for managing the wishlist and sharing data across the application.
+5.  **Routing and Auth Login**
+    
+    -   Routing is implemented using Next.js.
+    -   Login page with dummy authentication to access Home and Wishlist pages.
+6.  **Use of ESLint**
+    
+    -   ESLint is used to maintain code quality. Linting rules can be configured in the `.eslintrc.json` file.
+7.  **Use of CSS Modules**
+    
+    -   Styling is done using `module.css` for scoped styles. Examples: `page.module.css`, `login.module.css`, `wishlist.module.css`.
+8.  **Next.js and TypeScript**
+    
+    -   The application is built using Next.js with TypeScript to enhance code safety and quality.

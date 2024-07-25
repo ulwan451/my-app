@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Fira_Sans } from "next/font/google";
+import { WishlistProvider } from "@/context/WishlistContext";
+import Header from "@/components/Header";
+import "../styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const fira = Fira_Sans({
+  subsets: ["latin"],
+  weight: "300"
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={fira.className}>
+        <WishlistProvider>
+          <div className="wrapper-layout">
+            <Header />
+            {children}
+          </div>
+        </WishlistProvider>
+      </body>
     </html>
   );
 }

@@ -1,0 +1,20 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    width: 10rem;
+}
+
+.details {
+  text-align: left;
+}
+
+.removeButton {
+  background-color: darkred;
+  color: white;
+}
